@@ -1,0 +1,22 @@
+
+(1) Simulation of SNP Data (as table)
+main.R  sources the Simulation of SNP positions and phasing for a certain contig or chromosome 
+        with given parameters and a reference Genome
+        Output: "outPath/[Label].txt"                                   Table of SNP Data
+                "outPath/[Label]_meta.txt"                              Meta Information which is used by generateVCF.sh
+                "pathDat/simulatedData/timingSimulation_[Label].txt"    Timing of Simulation
+                "outPath/[Label].RData"                                 Backup of SNP positions, phasings, dosages, parameters, haploblock limits
+
+parameters/parameters.R stores parameters for Simulation
+programs/*  are sourced by main.R
+functions/* are used by programs.R and sourced by main.R
+analyze_simulation_output.R analyzes the generated SNP table
+
+Comment: In the R simulation Code sometimes haploblocks are wrongly refered to as haplotypes
+
+
+(2) Transformation of SNP Data into a VCF
+generateVCF.sh
+
+(3) Generates Reads from Reference Genome while incorporating SNPs from VCF using the program NGSNGS
+generateReads.sh
